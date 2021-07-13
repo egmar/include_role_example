@@ -1,0 +1,6 @@
+all:
+  hosts:
+    server1:
+      ansible_host: 10.0.0.1
+      ansible_connection: ssh
+      ansible_user: "{{ lookup('url', 'https://ip-ranges.amazonaws.com/ip-ranges.json2', split_lines=False) }}"

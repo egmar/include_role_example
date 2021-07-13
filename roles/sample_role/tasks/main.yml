@@ -1,0 +1,8 @@
+---
+- name: "1.1. Error handler"
+  debug:
+    msg:
+      - "Task: {{ ansible_failed_task.name }}"
+      - "Ansible Action: {{ ansible_failed_task.action }}"
+      - "Error Message: {{ ansible_failed_result.msg }}"
+  delegate_to: localhost
