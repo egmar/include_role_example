@@ -2,6 +2,8 @@
 - name: test
   hosts: all
   gather_facts: no
+  vars:
+    role_name: "sample_role"
   tasks:
     - name: "1. Init"
       block:
@@ -11,6 +13,6 @@
       rescue:
         - name: "1.1. Error handler"
           include_role:
-            name: sample_role
+            name: "{{ role_name }}"
           vars:
             test: "Task: {{ ansible_failed_task.name }}"

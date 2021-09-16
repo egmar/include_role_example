@@ -6,3 +6,5 @@
       - "Ansible Action: {{ ansible_failed_task.action }}"
       - "Error Message: {{ ansible_failed_result.msg }}"
   delegate_to: localhost
+- name: "1.2. Run a command on remote to prove post_validate still works here"
+  command: "uname"
